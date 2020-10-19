@@ -1,0 +1,21 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: sms-service
+  rabbitmq:
+    virtual-host: /youjia
+    username: youjia
+    password: youjia
+    host: 123.56.126.118
+    cache:
+      connection:
+        mode: channel
+    template:
+      retry:
+        enabled: true
+        initial-interval: 10000ms
+        max-interval: 60000ms
+        multiplier: 2
+      exchange: leyou.sms.exchange
+      publisher-confirms: true
